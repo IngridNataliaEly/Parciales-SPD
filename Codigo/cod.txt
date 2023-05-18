@@ -64,11 +64,31 @@ void loop()
     	 Bajar();
     }   
   }
-  else if (digitalRead(BUTTON_STOP) == LOW) 
+  estado = digitalRead(BUTTON_STOP);
+  if(estado != estadoAnterior)
   {
-    estadoBoton = digitalRead(BUTTON_STOP);
-    Parar(estadoBoton,estadoAnteriorBoton,estadoLed);
+    if (estado == LOW)
+    {
+      estadoLed = !estadoLed;
+      digitalWrite(LED_RED,estadoLed);
+      if(estadoLed == HIGH)
+      {
+      	parado =  true;
+        Display(pisos);
+        Serial.print("Montacargas detenido en el piso: ");
+        Serial.println(pisos); 
+      }
+      else
+      {
+      	parado =  false;
+        Display(pisos);
+        Serial.print("Montacargas reanudado: ");
+        Serial.println(pisos); 
+      }
+    }
+    estadoAnterior = estado;
   }
+  delay(100);
 }  
 void Subir()
 {
@@ -106,50 +126,8 @@ void Bajar()
     pisos = 0;
   }
 } 
-void Parar(int estadoBoton,int estadoAnteriorBoton,int estadoLed)
-{
-  
-  if (estadoBoton != estadoAnteriorBoton)
-  {
-    if(estadoBoton == LOW)//se presiono
-    {
-      estadoLed = 1 - estadoLed;
-       delay(250);
-    }
-    if(estadoLed == 1)
-    {
-      Serial.println("Estoy en 1");
-    }
-    if(estadoLed == 0)
-    {
-      Serial.println("Estoy en 0");
-    }
-    
-    /*Serial.println(estadoLed);
-    if(estadoBoton == LOW)
-    {
-      estadoLed = 1 - estadoLed;
-   		 delay(250);
 
-      if(estadoLed == 1)
-      { 
-        digitalWrite(LED_RED, estadoLed);
-      	parado =  true;
-        Display(pisos);
-        Serial.println("Montacargas detenido en el piso.");
-        Serial.println(pisos); 
-      }
-      else if(estadoLed == 0) 
-      {
-      parado = false;
-      seMueve = true;
-      digitalWrite(LED_RED, LOW);
-      Serial.println("Montacargas reanudado.");
-      }
-    }  
-  }*/
-   estadoAnteriorBoton = estadoBoton;
-}
+
 void Display(int pisos)
 {
   switch(pisos)
