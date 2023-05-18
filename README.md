@@ -346,9 +346,15 @@ El proyecto del montacargas controlado por Arduino permite al usuario subir o ba
 
 Cuando se presiona el botón de subir (BUTTON_UP), el montacargas se moverá hacia arriba si no ha alcanzado el piso máximo (piso 9). Si el montacargas ya está en el piso máximo, se mostrará un mensaje indicando que solo se puede subir hasta el piso 9.
 
+![Captura de pantalla (97)](https://github.com/IngridNataliaEly/Parciales-SPD/assets/108601149/b9819bdf-b0ae-44a1-902c-188ca3d7492a)
+
+
+
 Cuando se presiona el botón de bajar (BUTTON_DOWN), el montacargas se moverá hacia abajo si no ha alcanzado el piso mínimo (piso 1). Si el montacargas ya está en el piso mínimo, se mostrará un mensaje indicando que solo se puede bajar hasta el piso 1.
+![Captura de pantalla (98)](https://github.com/IngridNataliaEly/Parciales-SPD/assets/108601149/c498a4ce-a7c7-403c-b6a8-0cf96426dc11)
 
 El botón de detener (BUTTON_STOP) permite al usuario detener o reanudar el movimiento del montacargas. Cuando se presiona el botón de detener, el montacargas se detendrá y se mostrará el piso actual en el display de siete segmentos. El LED RED se encenderá para indicar que el montacargas está detenido. Al presionar nuevamente el botón de detener, el montacargas se reanudará y el LED RED se apagará.
+![Captura de pantalla (100)](https://github.com/IngridNataliaEly/Parciales-SPD/assets/108601149/7108f5f6-39e9-4458-9133-c9647b6b5448)
 
 El LED GREEN indica el estado de movimiento del montacargas. Se enciende cuando el montacargas está en movimiento y se apaga cuando está detenido.
 
