@@ -11,6 +11,7 @@ Ingrid Natalia Ely
 ## Descripción
 El proyecto consiste en un simulador de montacargas controlado por un Arduino. El montacargas puede subir y bajar hasta nueve pisos y se detiene / reanuda cuando se presiona el botón de detener. Utiliza un display de siete segmentos para mostrar el número de piso actual y LEDs para indicar el estado del montacargas.
 
+## Circuito Esquematico
 ![esquema](https://github.com/IngridNataliaEly/Parciales-SPD/assets/108601149/0d0689e2-7e21-4360-b7db-4b36714e297c)
 
 
